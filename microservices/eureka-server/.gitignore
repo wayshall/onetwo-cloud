@@ -1,0 +1,10 @@
+*.classpath
+*.project
+*.log
+*.metadata
+*.svn
+target
+.settings
+.idea
+/logs
+/clientfiles

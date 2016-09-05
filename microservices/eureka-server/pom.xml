@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+	    <groupId>org.springframework.cloud</groupId>
+	    <artifactId>onetwo-cloud-parent</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../parent</relativePath>
+    </parent>
+
+	<artifactId>onetwo-cloud-eureka-server</artifactId>
+	<packaging>jar</packaging>
+
+	<name>onetwo-cloud-eureka-server</name>
+	<description>onetwo-cloud-eureka-server</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<!-- for test -->
+		<unit-tests.skip>false</unit-tests.skip>
+        <integration-tests.skip>true</integration-tests.skip>
+	</properties>
+
+	<dependencies>
+		
+	    <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<!-- <exclusions>
+			 <exclusion>
+			    <groupId>com.amazonaws</groupId>
+			    <artifactId>aws-java-sdk-pom</artifactId>
+			 </exclusion>
+			 <exclusion>
+			     <groupId>com.fasterxml.jackson.dataformat</groupId>
+			     <artifactId>jackson-dataformat-xml</artifactId>
+			 </exclusion>
+			</exclusions> -->
+		</dependency>
+		
+        <!-- <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+		    <groupId>com.fasterxml.jackson.dataformat</groupId>
+		    <artifactId>jackson-dataformat-xml</artifactId>
+		    <version>2.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency> -->
+
+	</dependencies>
+	
+	<build>
+	    <plugins>
+	       <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>${spring-loaded.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+	    </plugins>
+	</build>
+	
+	
+</project>
