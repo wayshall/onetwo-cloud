@@ -14,8 +14,11 @@
   </properties>
   
     
-	<module>modules/parent</module>
-	<module>modules/microservices/eureka-server</module>
+    <modules>
+		<module>parent</module>
+		<module>microservices/eureka-server</module>
+	</modules>
+		
 	<profiles>
 	  <profile>
     	<id>all</id>
@@ -36,10 +39,12 @@
 		    <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
