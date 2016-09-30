@@ -1,0 +1,16 @@
+#-Dspring.profiles.active=eureka2
+server:
+    port: 9761
+spring:
+    application:
+        name: eureka2
+eureka:
+    instance:
+        hostname: eureka2
+    client:
+        registerWithEureka: true
+        serviceUrl:
+            defaultZone:  http://eureka1:8761/eureka/
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
+            

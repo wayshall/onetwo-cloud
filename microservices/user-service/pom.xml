@@ -4,59 +4,24 @@
 	<modelVersion>4.0.0</modelVersion>
     
     <parent>
-        <groupId>org.onetwo.cloud</groupId>
-	    <artifactId>onetwo-cloud-parent</artifactId>
+        <groupId>org.onetwo.ms</groupId>
+        <artifactId>onetwo-cloud-ms-parent</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../parent</relativePath>
+        <relativePath>../parent</relativePath>
     </parent>
 
-	<artifactId>onetwo-cloud-eureka-server</artifactId>
+	<artifactId>onetwo-cloud-ms-user-service</artifactId>
 	<packaging>jar</packaging>
 
-	<name>onetwo-cloud-eureka-server</name>
-	<description>onetwo-cloud-eureka-server</description>
+	<name>onetwo-cloud-ms-user-service</name>
+	<description>onetwo-cloud-ms-user-service</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-        <start-class>org.onetwo.cloud.eureka.server.EurekaServerApplication</start-class>
-		<!-- for test -->
-		<unit-tests.skip>false</unit-tests.skip>
-        <integration-tests.skip>true</integration-tests.skip>
+        <start-class>org.onetwo.cloud.ms.user.UserApplication</start-class>
 	</properties>
 
 	<dependencies>
-		
-	    <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-			<!-- <exclusions>
-			 <exclusion>
-			    <groupId>com.amazonaws</groupId>
-			    <artifactId>aws-java-sdk-pom</artifactId>
-			 </exclusion>
-			 <exclusion>
-			     <groupId>com.fasterxml.jackson.dataformat</groupId>
-			     <artifactId>jackson-dataformat-xml</artifactId>
-			 </exclusion>
-			</exclusions> -->
-		</dependency>
-		
-        <!-- <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <dependency>
-		    <groupId>com.fasterxml.jackson.dataformat</groupId>
-		    <artifactId>jackson-dataformat-xml</artifactId>
-		    <version>2.8.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency> -->
-
 	</dependencies>
 	
 	<build>

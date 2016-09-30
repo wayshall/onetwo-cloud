@@ -1,4 +1,4 @@
-package org.onetwo.cloud.eureka.server;
+package org.onetwo.cloud.ms.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
