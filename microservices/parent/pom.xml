@@ -29,7 +29,7 @@
 
     <dependencies>
         
-       <!-- boot1.4rc 日志有冲突
+       <!-- boot1.4rc 日志有冲突   -->
 	   <dependency>
 	       <groupId>ch.qos.logback</groupId>
 	       <artifactId>logback-core</artifactId>
@@ -52,12 +52,18 @@
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
         </dependency>
-	   -->
+	 
 	   
         <!-- <dependency>
           <groupId>org.onetwo</groupId>
           <artifactId>onetwo-security</artifactId>
         </dependency> -->
+        
+        <dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-starter-eureka</artifactId>
+	    </dependency>
+	    
         <dependency>
           <groupId>org.onetwo</groupId>
           <artifactId>onetwo-dbm</artifactId>
@@ -112,7 +118,7 @@
           <artifactId>spring-data-commons</artifactId>
         </dependency>
         
-        <dependency>
+        <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
@@ -120,7 +126,7 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
-        </dependency>
+        </dependency> -->
     
         <dependency>
           <groupId>commons-net</groupId>
@@ -137,9 +143,16 @@
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
         
+        <!-- for health -->
         <dependency>
         	<groupId>org.springframework.boot</groupId>
  			<artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+        <!-- for logback jmx -->
+        <dependency>
+           <groupId>org.jolokia</groupId>
+           <artifactId>jolokia-core</artifactId>
         </dependency>
         
         <!-- for test -->
@@ -193,6 +206,30 @@
     </dependencyManagement>
     
     <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+                <log.path>../logs/${artifactId}.%d{yyyy-MM-dd}.log</log.path>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <env>test</env>
+                <log.path>../logs/${artifactId}.%d{yyyy-MM-dd}.log</log.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <env>product</env>
+                <log.path>/home/webuser/servers/apache-tomcat-8.5.4/logs/${artifactId}.%d{yyyy-MM-dd}.log</log.path>
+            </properties>
+        </profile>
        <profile>
         <id>integration</id>
         <properties>
@@ -204,7 +241,24 @@
     
     <build>
         <finalName>${artifactId}-${version}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-resources-plugin</artifactId>
+                 <!-- <version>2.6</version> -->
+                 <configuration>
+                    <delimiters>
+                       <delimiter>@{*}</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                 </configuration> 
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -272,6 +326,18 @@
 			   </executions>
 			</plugin> 
             
+            <!-- build info -->
+            <!-- <plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	            <executions>
+	                <execution>
+	                    <goals>
+	                        <goal>build-info</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin> -->
             
             <!-- for test -->
             <plugin>
