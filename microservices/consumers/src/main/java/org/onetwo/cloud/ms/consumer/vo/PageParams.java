@@ -1,4 +1,4 @@
-package org.onetwo.cloud.ms.consumer;
+package org.onetwo.cloud.ms.consumer.vo;
 
 import lombok.Data;
 

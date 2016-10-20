@@ -18,11 +18,18 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>org.onetwo.cloud.ms.user.UserApplication</start-class>
+        <start-class>org.onetwo.cloud.ms.consumer.ConsumersApplication</start-class>
 	</properties>
 
 	<dependencies>
-		
+		<dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-starter-ribbon</artifactId>
+	    </dependency>
+	    <dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-starter-feign</artifactId>
+	    </dependency>
 	</dependencies>
 	
 	<build>
