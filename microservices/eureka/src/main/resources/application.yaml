@@ -3,8 +3,8 @@ server:
 eureka:
     instance:
         hostname: localhost
-        leaseRenewalIntervalInSeconds: 10
-        leaseExpirationDurationInSeconds: 30
+        leaseRenewalIntervalInSeconds: 2
+        leaseExpirationDurationInSeconds: 3
     client:
         registerWithEureka: false
         fetchRegistry: false
@@ -12,5 +12,6 @@ eureka:
             defaultZone:  http://localhost:8761/eureka/
     server:
         waitTimeInMsWhenSyncEmpty: 0
-        #enableSelfPreservation: false
+        enableSelfPreservation: false
+        evictionIntervalTimerInMs: 4000
             

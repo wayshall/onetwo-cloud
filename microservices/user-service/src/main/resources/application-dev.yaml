@@ -8,6 +8,9 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
 
 eureka:
+    instance:
+        leaseRenewalIntervalInSeconds: 2
+        leaseExpirationDurationInSeconds: 3
     client:
         registerWithEureka: true
         serviceUrl:
