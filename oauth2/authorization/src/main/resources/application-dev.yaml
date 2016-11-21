@@ -14,6 +14,6 @@ security:
             client-id: acme
             client-secret: acmesecret
             scope: read,write
-            auto-approve-scopes: '.*'
+            # auto-approve-scopes: '.*'
         authorization:
             checkTokenAccess: isAuthenticated()
