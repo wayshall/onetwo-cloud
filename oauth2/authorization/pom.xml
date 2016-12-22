@@ -49,20 +49,20 @@
 	   </dependency>
 	   
         <dependency>
-          <groupId>org.onetwo</groupId>
+          <groupId>org.onetwo4j</groupId>
           <artifactId>onetwo-security</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.onetwo</groupId>
+          <groupId>org.onetwo4j</groupId>
           <artifactId>onetwo-web</artifactId>
         </dependency>
         <dependency>
-          <groupId>org.onetwo</groupId>
+          <groupId>org.onetwo4j</groupId>
           <artifactId>onetwo-dbm</artifactId>
         </dependency>
         
         <dependency>
-          <groupId>org.onetwo.plugins</groupId>
+          <groupId>org.onetwo4j</groupId>
           <artifactId>onetwo-plugin-web-admin</artifactId>
         </dependency>
         
@@ -174,7 +174,7 @@
         
         <!-- for test -->
         <dependency>
-          <groupId>org.onetwo</groupId>
+          <groupId>org.onetwo4j</groupId>
           <artifactId>onetwo-test</artifactId>
           <scope>test</scope> 
         </dependency>
@@ -219,9 +219,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.onetwo</groupId>
+                <groupId>org.onetwo4j</groupId>
                 <artifactId>onetwo-bom</artifactId>
-                <version>4.3.4-SNAPSHOT</version>
+                <version>4.3.6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

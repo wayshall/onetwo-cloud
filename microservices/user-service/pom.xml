@@ -23,7 +23,7 @@
 
 	<dependencies>
         <dependency>
-          <groupId>org.onetwo</groupId>
+          <groupId>org.onetwo4j</groupId>
           <artifactId>onetwo-dbm</artifactId>
         </dependency>
 	    <dependency>
