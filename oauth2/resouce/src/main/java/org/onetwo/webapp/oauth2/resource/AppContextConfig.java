@@ -1,5 +1,6 @@
 package org.onetwo.webapp.oauth2.resource;
 
+import org.onetwo.boot.module.security.url.EnableUrlSecurity;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -9,20 +10,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 @Configuration
 @EnableResourceServer
-public class AppContextConfig extends ResourceServerConfigurerAdapter{
+@EnableUrlSecurity
+public class AppContextConfig {
 
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-			.and()
-			.authorizeRequests()
-				.anyRequest()
-				.authenticated();
-	}
-	
-	
-
-	
 	/*public AppContextConfig(ApplicationContext applicationContext, OAuth2SsoProperties sso) {
 		super(applicationContext, sso);
 	}*/
