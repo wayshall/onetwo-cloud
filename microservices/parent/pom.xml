@@ -12,14 +12,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.RELEASE</version>
+        <version>1.4.3.RELEASE</version>
     </parent>
   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <start-class>org.onetwo.webapp.manager.ApplicationStarter</start-class>
         
-        <onetwo.version>4.3.6-SNAPSHOT</onetwo.version>
+        <onetwo.version>4.6.0-SNAPSHOT</onetwo.version>
         <!-- for test -->
         <unit-tests.skip>false</unit-tests.skip>
         <integration-tests.skip>true</integration-tests.skip>
@@ -68,6 +67,11 @@
           <groupId>org.onetwo4j</groupId>
           <artifactId>onetwo-boot</artifactId>
         </dependency>
+        
+	    <dependency>
+	      <groupId>com.squareup.okhttp3</groupId>
+	      <artifactId>okhttp</artifactId>
+	    </dependency>
         
         <dependency>
             <groupId>javax.servlet.jsp</groupId>

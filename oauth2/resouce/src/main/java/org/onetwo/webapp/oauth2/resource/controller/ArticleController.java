@@ -6,7 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.onetwo.common.data.AbstractDataResult.SimpleDataResult;
-import org.onetwo.common.spring.web.mvc.utils.WebResultCreator;
+import org.onetwo.common.spring.mvc.utils.WebResultCreator;
 import org.onetwo.common.utils.LangOps;
 import org.onetwo.webapp.oauth2.resource.vo.ArticleVO;
 import org.springframework.beans.factory.annotation.Autowired;
